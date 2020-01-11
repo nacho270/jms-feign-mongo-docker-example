@@ -1,0 +1,40 @@
+version: '3'
+services:
+
+   activemq:
+      image: webcenter/activemq
+      ports:
+         - 61616:61616
+         - 8161:8161
+         - 61613:61613
+      networks:
+         - nacho-network
+
+   mongodb:
+      image: mongo:latest
+      ports:
+         - 27017:27017
+      networks:
+         - nacho-network  
+
+   producer:
+         image: nacho/producer:latest
+         ports:
+            - 8080:8080
+         networks:
+            - nacho-network
+         links:
+            - activemq
+            - mongodb
+
+   consumer:
+         image: nacho/consumer:latest
+         ports:
+            - 8180:8080
+         networks:
+            - nacho-network
+         links:
+            - activemq
+            - mongodb
+networks:
+   nacho-network:
