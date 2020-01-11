@@ -26,5 +26,15 @@ services:
          links:
             - activemq
             - mongodb
+            
+   consumer:
+         image: nacho/consumer:latest
+         ports:
+            - 8180:8080
+         networks:
+            - nacho-network
+         links:
+            - activemq
+            - mongodb
 networks:
    nacho-network:

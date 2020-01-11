@@ -58,19 +58,6 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>testcontainers</artifactId>
-			<version>1.12.4</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>1.12.4</version>
-		</dependency>
-
-
 		<!-- SPRING DOC (SWAGGER, OPENAPI) -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
